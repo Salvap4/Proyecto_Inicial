@@ -1,5 +1,37 @@
 package sesion20250122;
 
+/**
+ * La clase Coche representa un coche con atributos de marca, modelo y velocidad.
+ * Proporciona métodos para obtener y modificar estos atributos, así como para
+ * acelerar y frenar el coche.
+ * 
+ * Atributos:
+ * - marca: La marca del coche.
+ * - modelo: El modelo del coche.
+ * - velocidad: La velocidad actual del coche en km/h.
+ * 
+ * Métodos:
+ * - Coche(String marca, String modelo): Constructor que inicializa un coche con la marca y modelo especificados, y velocidad inicial de 0 km/h.
+ * - getMarca(): Devuelve la marca del coche.
+ * - getModelo(): Devuelve el modelo del coche.
+ * - getVelocidad(): Devuelve la velocidad actual del coche.
+ * - setMarca(String marca): Establece la marca del coche.
+ * - setModelo(String modelo): Establece el modelo del coche.
+ * - setVelocidad(int velocidad): Establece la velocidad del coche, siempre que sea un valor positivo.
+ * - acelerar(int incremento): Aumenta la velocidad del coche en la cantidad especificada, siempre que el incremento sea positivo.
+ * - frenar(int decremento): Reduce la velocidad del coche en la cantidad especificada, siempre que el decremento sea positivo y no resulte en una velocidad negativa.
+ * 
+ * Ejemplo de uso:
+ * <pre>
+ * {@code
+ * Coche miCoche = new Coche("KIA", "Ceed");
+ * System.out.println("Mi coche es un " + miCoche.getMarca() + " " + miCoche.getModelo() + " que ahora va a " + miCoche.getVelocidad() + " km/h");
+ * miCoche.setVelocidad(100);
+ * System.out.println("Mi coche va a " + miCoche.getVelocidad() + " km/h");
+ * miCoche.frenar(40);
+ * }
+ * </pre>
+ */
 public class Coche {
 
     // Lo primero que solemos hacer es declarar qué atributos va a usar nuestra clase.
