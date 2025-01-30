@@ -35,16 +35,29 @@ public class Fraccion {
 
     // Constructores
     public Fraccion() {
-        numerador = 1;
-        denominador = 0;
+        numerador = 0;
+        denominador = 1;
     }
 
-    public Fraccion(int numerador, int denominador) {
-        if (denominador != 0) {
+    // public Fraccion(int numerador, int denominador) {
+    //     if (denominador != 0) {
+    //         this.numerador = numerador;
+    //         this.denominador = denominador;
+    //     } else {
+    //         System.out.println("El denominador no puede ser 0");
+    //     }
+    // }
+
+    public Fraccion (int numerador, int denominador) {
+        if (denominador == 0) {
+            throw new IllegalArgumentException("El denominador no puede ser 0");
+        }
+        if (denominador < 0) {
+            numerador = -numerador;
+            denominador = -denominador;
+        } else {
             this.numerador = numerador;
             this.denominador = denominador;
-        } else {
-            System.out.println("El denominador no puede ser 0");
         }
     }
 
@@ -65,16 +78,33 @@ public class Fraccion {
         this.numerador = numerador;
     }
     
+    // public void setDenominador(int denominador) {
+    //     if(denominador != 0) {
+    //         this.denominador = denominador;
+    //     } else {
+    //         System.out.println("El denominador no puede ser 0");
+    //     }
+    // }
+
     public void setDenominador(int denominador) {
-        if(denominador != 0) {
-            this.denominador = denominador;
+        if (denominador == 0) {
+            throw new IllegalArgumentException("El denominador no puede ser 0");
+        }
+        if (denominador < 0) {
+            numerador = -numerador;
+            this.denominador = -denominador;
         } else {
-            System.out.println("El denominador no puede ser 0");
+            this.denominador = denominador;
         }
     }
 
+    // public String toString() {
+    //     return (numerador+"/"+denominador);
+    // }
+
+    @Override
     public String toString() {
-        return (numerador+"/"+denominador);
+        return (denominador == 1) ? String.valueOf(numerador) : numerador+"/"+denominador;
     }
 
     // Ejemplo de uso
